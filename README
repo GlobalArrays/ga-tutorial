@@ -1,0 +1,41 @@
+GA hands-on tutorial programs:
+==============================
+
+Tutorial codes: 
+---------------
+follow the instrictions preceded by "###" to write missing snippet.
+matrix.tutorial.F      
+matrix-c.tutorial.c    
+transp1D.tutorial.F
+transp1D-c.tutorial.c
+
+Complete version of tutorial codes:
+-----------------------------------
+matrix.F               
+matrix-c.c             
+transp1D.F
+transp1D-c.c           
+
+Compile:
+--------
+Use "gmake" and not "make".
+
+Modify the GNUmakefile for appropriate compiler, flags, ga libs, etc.  (Run
+"make flags" in your GA build directory and modify the GNUmakefile
+accordingly) e.g.::
+
+    gmake matrix.x 
+
+Running:
+--------
+Run interactively or use jobscript.poe to submit parallel jobs as follows::
+
+    mpirun -np 2 -machinefile machines.txt <your executable>
+
+Example::
+
+    mpirun -np 2 -machinefile machines.txt matrix.x
+
+For Python users::
+
+    mpirun -np 2 -machinefile machines.txt python matrix.py

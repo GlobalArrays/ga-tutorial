@@ -1,0 +1,26 @@
+!/bin/csh -x
+# @ job_type         =    parallel
+# @ class            =    debug
+# @ environment      =    COPY_ALL; MP_INFOLEVEL=3; MP_PULSE=0; MP_SINGLE_THREAD=yes; MP_WAIT_MODE=yield; MP_EUILIB=us; AIXTHREAD_SCOPE=S; restart=no; RT_GRQ=ON
+# @ input            =    /dev/null
+# @ output           =    test.$(jobid).out 
+# @ error            =    test.$(jobid).err 
+# @ wall_clock_limit =    0:10:00
+# @ cpu_limit        =    0:10:00
+# @ notification     =    complete
+# @ network.lapi     = csss,not_shared,US
+# @ node             =    1
+# @ tasks_per_node   =    4
+# @ queue
+#
+# This gives good MPI performance on few nodes but hangs on many nodes
+#MP_WAIT_MODE=yield;
+
+############################################################################
+## Run the job
+##    NOTE: Change transp1D.x to specify your testcase.
+############################################################################
+
+poe transp1D.x
+
+
