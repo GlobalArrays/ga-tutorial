@@ -90,8 +90,6 @@ int main(int argc, char **argv) {
     /*  ### retrieve the data from "g_a" corresponding to the block represented
      *  ### by the arrays "lo" and "hi" and store it in the local buffer
      *  ### "b_buf[][ld]" */
-    NGA_Distribution(g_a, me, lo, hi);
-    NGA_Get(g_a, lo, hi, b_buf, &ld);
     if (me == 0) {
       printf("\nCopied values from Global Array to local buffer\n");
     }
