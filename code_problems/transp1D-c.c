@@ -90,7 +90,7 @@ void TRANSPOSE1D() {
     hi2[0] = dims[0] - lo1[0] -1;
 
     /* ### copy data from the local array "b" into the block of the global
-     * ### array "g_a" described by the integer arrays "lo2" and "hi2". Use
+     * ### array "g_b" described by the integer arrays "lo2" and "hi2". Use
      * ### the array of strides "ld" to describe the physical layout of "b". */
 
     /* Synchronize all processors to make sure inversion is complete */
